@@ -1,0 +1,39 @@
+Pragma solidity ^0.6.0;
+
+contract myDapp {
+    
+    uint inches;
+    uint fullGas;
+    uint Gallons = 5;
+
+    function howManyInches() public view returns(uint) {
+        return inches;
+    }
+    function itRained() public returns (uint) {
+        inches = inches + 1;
+    }
+    function needToMow() public view returns (string memory) {
+        
+        if (inches <= 3) {
+            return "We haven't had enough rain yet.";
+        }
+        else {
+            return "Please mow the lawn.";
+            }
+    
+    }
+    function HowManyGallons() public view returns(uint) {
+        return Gallons;
+    }
+
+    function usedMower() public returns (uint) {
+        if (Gallons > 0) {
+        Gallons = Gallons - 1;  
+    }
+    }
+
+    function mowedTheLawn() private view returns(uint) {
+        
+    }
+
+}
